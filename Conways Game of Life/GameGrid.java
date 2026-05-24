@@ -4,8 +4,7 @@
  *
  * @author Isaiah Taumoepeau
  */
-class GameGrid
-{
+class GameGrid {
     private static final byte NEIGHBORS_PER_CELL = 8;
     
     private final int WIDTH;
@@ -19,8 +18,7 @@ class GameGrid
      * @param  width  width to make the game grid
      * @param  height height to make the game grid
      */
-    GameGrid(int width, int height)
-    {
+    GameGrid(int width, int height) {
         this.WIDTH = width;
         this.HEIGHT = height;
         cells = new boolean[HEIGHT][WIDTH];
@@ -41,8 +39,8 @@ class GameGrid
     /**
      * Sets the state of a cell
      *
-     * @param  cellX     x-coordinate of the cell to affect
-     * @param  cellY     y-coordinate of the cell to affect
+     * @param  cellX x-coordinate of the cell to affect
+     * @param  cellY y-coordinate of the cell to affect
      * @param  state state to change the cell to
      */
     void setCellsState(int cellX, int cellY, boolean state) {
@@ -50,7 +48,7 @@ class GameGrid
     }
     
     /**
-     * Returns the neighbor cells of the cell at the specified index
+     * Returns the neighbor of alive neighbors a specified cell has. A cells neighbors are the cells adjacent to it, including those diagonally adjacent.
      *
      * @param  index self explanatory
      * @return       the neighbors
@@ -60,10 +58,10 @@ class GameGrid
         
         for(int xOffset=-1;xOffset<=1;xOffset++) {
             for(int yOffset=-1;yOffset<=1;yOffset++) {
-                if(xOffset != 0 && yOffset != 0) {
-                    boolean targetNeighborAlive = cell(cellX+xOffset, cellY+yOffset);
-                    neighbors += targetNeighborAlive ? 1 : 0;
-                }
+                boolean cellIsNeighbor = (xOffset != 0 || yOffset != 0);
+                boolean cellIsAlive = cell(cellX+xOffset, cellY+yOffset);
+                
+                neighbors += (!cellIsNeighbor && cellIsAlive) ? 1 : 0;
             }
         }
         
