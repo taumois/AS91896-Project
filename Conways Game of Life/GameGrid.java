@@ -1,6 +1,6 @@
 
 /**
- * GameGrid, a class to hold the state of the game, including every cell. Cells are booleans, where true = alive/false = dead
+ * Objects of GameGrid hold the state of a game of Conway's Game of Life, including every cell. Cells are booleans, where true = alive/false = dead
  *
  * @author Isaiah Taumoepeau
  */
@@ -10,48 +10,49 @@ class GameGrid {
     private final int WIDTH;
     private final int HEIGHT;
     
-    private boolean[][] cells;
+    private final boolean[][] CELLS;
 
     /**
      * Constructor for objects of class GameGrid
      * 
-     * @param  width  width to make the game grid
-     * @param  height height to make the game grid
+     * @param width  width to make the grid
+     * @param height height to make the grid
      */
     GameGrid(int width, int height) {
         this.WIDTH = width;
         this.HEIGHT = height;
-        cells = new boolean[HEIGHT][WIDTH];
+        CELLS = new boolean[HEIGHT][WIDTH];
     }
     
     /**
-     * Returns the state of a cell
+     * Returns the state of a specified cell
      *
-     * @param  cellX x-coordinate of the cell to return
-     * @param  cellY y-coordinate of the cell to return
-     * @return   the cell
+     * @param cellX x-coordinate of the target cell
+     * @param cellY y-coordinate of the target cell
+     * @return      the cell
      */
     boolean cell(int cellX, int cellY) {
-        boolean cell = cells[cellY][cellX];
+        boolean cell = CELLS[cellY][cellX];
         return cell;
     }
     
     /**
-     * Sets the state of a cell
+     * Sets the state of a specified cell. Either alive or dead(i.e. true or false)
      *
-     * @param  cellX x-coordinate of the cell to affect
-     * @param  cellY y-coordinate of the cell to affect
-     * @param  state state to change the cell to
+     * @param cellX x-coordinate of the target cell
+     * @param cellY y-coordinate of the target cell
+     * @param state state to change the cell to
      */
     void setCellsState(int cellX, int cellY, boolean state) {
-        cells[cellX][cellY] = state;
+        CELLS[cellX][cellY] = state;
     }
     
     /**
-     * Returns the neighbor of alive neighbors a specified cell has. A cells neighbors are the cells adjacent to it, including those diagonally adjacent.
+     * Returns the neighbor of alive neighbors a specified cell has. A CELLS neighbors are the CELLS adjacent to it, including those diagonally adjacent
      *
-     * @param  index self explanatory
-     * @return       the neighbors
+     * @param  cellX x-coordinate of the target cell
+     * @param  cellY y-coordinate of the target cell
+     * @return the neighbors
      */
     int cellsNumberOfLivingNeighbors(int cellX, int cellY) {
         int neighbors = 0;

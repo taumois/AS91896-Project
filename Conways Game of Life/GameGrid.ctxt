@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.target=GameGrid
-comment0.text=\r\n\ GameGrid,\ a\ class\ to\ hold\ the\ state\ of\ the\ game,\ including\ every\ cell.\ Cells\ are\ booleans,\ where\ true\ \=\ alive/false\ \=\ dead\r\n\r\n\ @author\ Isaiah\ Taumoepeau\r\n
+comment0.text=\r\n\ Objects\ of\ GameGrid\ hold\ the\ state\ of\ a\ game\ of\ Conway's\ Game\ of\ Life,\ including\ every\ cell.\ Cells\ are\ booleans,\ where\ true\ \=\ alive/false\ \=\ dead\r\n\r\n\ @author\ Isaiah\ Taumoepeau\r\n
 comment1.params=width\ height
 comment1.target=GameGrid(int,\ int)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameGrid\r\n\ \r\n\ @param\ \ width\ \ width\ to\ make\ the\ game\ grid\r\n\ @param\ \ height\ height\ to\ make\ the\ game\ grid\r\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameGrid\r\n\ \r\n\ @param\ width\ \ width\ to\ make\ the\ grid\r\n\ @param\ height\ height\ to\ make\ the\ grid\r\n
 comment2.params=cellX\ cellY
 comment2.target=boolean\ cell(int,\ int)
-comment2.text=\r\n\ Returns\ the\ state\ of\ a\ cell\r\n\r\n\ @param\ \ cellX\ x-coordinate\ of\ the\ cell\ to\ return\r\n\ @param\ \ cellY\ y-coordinate\ of\ the\ cell\ to\ return\r\n\ @return\ \ \ the\ cell\r\n
+comment2.text=\r\n\ Returns\ the\ state\ of\ a\ specified\ cell\r\n\r\n\ @param\ cellX\ x-coordinate\ of\ the\ target\ cell\r\n\ @param\ cellY\ y-coordinate\ of\ the\ target\ cell\r\n\ @return\ \ \ \ \ \ the\ cell\r\n
 comment3.params=cellX\ cellY\ state
 comment3.target=void\ setCellsState(int,\ int,\ boolean)
-comment3.text=\r\n\ Sets\ the\ state\ of\ a\ cell\r\n\r\n\ @param\ \ cellX\ x-coordinate\ of\ the\ cell\ to\ affect\r\n\ @param\ \ cellY\ y-coordinate\ of\ the\ cell\ to\ affect\r\n\ @param\ \ state\ state\ to\ change\ the\ cell\ to\r\n
+comment3.text=\r\n\ Sets\ the\ state\ of\ a\ specified\ cell.\ Either\ alive\ or\ dead(i.e.\ true\ or\ false)\r\n\r\n\ @param\ cellX\ x-coordinate\ of\ the\ target\ cell\r\n\ @param\ cellY\ y-coordinate\ of\ the\ target\ cell\r\n\ @param\ state\ state\ to\ change\ the\ cell\ to\r\n
 comment4.params=cellX\ cellY
 comment4.target=int\ cellsNumberOfLivingNeighbors(int,\ int)
-comment4.text=\r\n\ Returns\ the\ neighbor\ of\ alive\ neighbors\ a\ specified\ cell\ has.\ A\ cells\ neighbors\ are\ the\ cells\ adjacent\ to\ it,\ including\ those\ diagonally\ adjacent.\r\n\r\n\ @param\ \ index\ self\ explanatory\r\n\ @return\ \ \ \ \ \ \ the\ neighbors\r\n
+comment4.text=\r\n\ Returns\ the\ neighbor\ of\ alive\ neighbors\ a\ specified\ cell\ has.\ A\ CELLS\ neighbors\ are\ the\ CELLS\ adjacent\ to\ it,\ including\ those\ diagonally\ adjacent\r\n\r\n\ @param\ \ cellX\ x-coordinate\ of\ the\ target\ cell\r\n\ @param\ \ cellY\ y-coordinate\ of\ the\ target\ cell\r\n\ @return\ the\ neighbors\r\n
 numComments=5
