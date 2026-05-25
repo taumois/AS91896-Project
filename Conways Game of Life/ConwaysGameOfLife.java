@@ -5,7 +5,7 @@
  * @author Isaiah Taumoepeau
  */
 public class ConwaysGameOfLife {
-    ConwaysGameOfLife() {
+    public ConwaysGameOfLife() {
         //
     }
 }

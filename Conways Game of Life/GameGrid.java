@@ -25,6 +25,15 @@ class GameGrid {
     }
     
     /**
+     * Returns an array with the state of all cells
+     *
+     * @return all the cells
+     */
+    boolean[][] cells() {
+        return CELLS;
+    }
+    
+    /**
      * Returns the state of a specified cell
      *
      * @param cellX x-coordinate of the target cell
