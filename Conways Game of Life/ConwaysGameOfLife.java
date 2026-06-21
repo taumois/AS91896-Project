@@ -13,6 +13,9 @@ public class ConwaysGameOfLife {
     ConwaysGameOfLife(GameUI ui, GameGrid grid) {
         this.UI = ui;
         this.GRID = grid;
+        while(true) {
+            display();
+        }
     }
     
     void display() {
@@ -46,11 +49,11 @@ public class ConwaysGameOfLife {
             return Cell.DEAD;
         }
         
-        boolean willUnderpopulate = numberOfLivingNeighbors > MINIMUM_LIVE_NEIGHBORS_FOR_SURVIVAL;
+        boolean willUnderpopulate = numberOfLivingNeighbors < MINIMUM_LIVE_NEIGHBORS_FOR_SURVIVAL;
         if(willUnderpopulate) { 
             return Cell.DEAD; 
         }
-        boolean willOverpopulate = numberOfLivingNeighbors < MAXIMUM_LIVE_NEIGHBORS_FOR_SURVIVAL;
+        boolean willOverpopulate = numberOfLivingNeighbors > MAXIMUM_LIVE_NEIGHBORS_FOR_SURVIVAL;
         if(willOverpopulate) { 
             return Cell.DEAD; 
         }

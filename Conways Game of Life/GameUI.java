@@ -17,7 +17,7 @@ class GameUI {
     }
     
     void updateDisplay(Cell[][] grid) {
-        DISPLAY.display(grid);
+        DISPLAY.updateDisplay(grid);
     }
     
     int userAction() {

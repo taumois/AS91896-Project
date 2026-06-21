@@ -10,7 +10,7 @@ public class GameFactory {
      * @return the object
      */
     public static ConwaysGameOfLife egGame() {
-        var game = new ConwaysGameOfLife(new GameUI(new TextUserDisplay(), new TerminalUserInput()), new GameGrid(8, 4));
+        var game = new ConwaysGameOfLife(new GameUI(new TextUserDisplay(), new TerminalUserInput()), new GameGrid(24, 24));
         return game;
     }
 }
