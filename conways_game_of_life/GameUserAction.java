@@ -2,16 +2,16 @@
 /**
  * UserAction here.
  */
-public class UserAction {
+public class GameUserAction {
 
     /**
      * Constructor for objects of class UserAction
      */
-    public UserAction() {
+    public GameUserAction() {
         //
     }
     
-    public void act(ConwaysGameOfLife game) {
+    public void act(Game game) {
         //
     }
 }

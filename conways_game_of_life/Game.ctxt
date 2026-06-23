@@ -1,12 +1,12 @@
 #BlueJ class context
-comment0.target=ConwaysGameOfLife
+comment0.target=Game
 comment0.text=\r\n\ ConwaysGameOfLife\ here.\r\n
 comment1.params=ui\ grid
-comment1.target=ConwaysGameOfLife(GameUI,\ GameGrid)
+comment1.target=Game(GameUI,\ GameGrid)
 comment2.params=
-comment2.target=void\ start()
+comment2.target=void\ play()
 comment3.params=
-comment3.target=void\ display()
+comment3.target=void\ step()
 comment4.params=
 comment4.target=void\ foo()
 comment5.params=state\ numberOfLivingNeighbors

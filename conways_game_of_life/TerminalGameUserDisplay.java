@@ -1,8 +1,8 @@
 
 /**
- * TextUserDisplay here.
+ * Can display everything necessary for a game via the terminal
  */
-class TerminalUserDisplay implements UserDisplay {
+class TerminalGameUserDisplay implements GameUserDisplay {
     private static final char UNICODE_CLEAR_SCREEN_COMMAND = '\u000C';
     private static final char ALIVE_CELL_SYMBOL = 'W';
     private static final char DEAD_CELL_SYMBOL = '`';
@@ -10,32 +10,47 @@ class TerminalUserDisplay implements UserDisplay {
     /**
      * Constructor for objects of class TextUserDisplay
      */
-    TerminalUserDisplay(){
+    TerminalGameUserDisplay(){
         //
     }
     
     /**
-     * Displays a grid of cells using text
+     * Updates the displayed grid i.e. cells
      *
      * @param grid the grid to display
      */
-    public void update(Cell[][] grid) {
+    public void updateGrid(Cell[][] grid) {
         char[] displayBuffer = printableBufferFromGrid(grid);
-        clearScreen();
+        clearTerminal();
         System.out.print(displayBuffer);
     }
     
-    private void clearScreen() {
+    /**
+     * Displays a prompt for the user
+     *
+     * @param prompt for the user
+     */
+    public void promptUserForAction(String prompt) {
+        //
+    }
+    
+    /**
+     * Clears the display, i.e. terminal
+     */
+    private void clearTerminal() {
         System.out.print(UNICODE_CLEAR_SCREEN_COMMAND);
     }
     
+    /**
+     * Returns a ready to print buffer of a given grid's cell representations
+     */
     private char[] printableBufferFromGrid(Cell[][] grid) {
         char[] symbolBuffer = new char[grid.length * (grid[0].length + 1)];
         
         for(int row=0;row<grid.length;row++) {
             for(int column=0;column<grid[row].length;column++) {
                 Cell cell = grid[row][column];
-                char cellSymbol = symbolFromCell(cell);
+                char cellSymbol = charRepresentationFromCell(cell);
                 
                 int index = row * grid[row].length + column + row;
                 symbolBuffer[index] = cellSymbol;
@@ -48,12 +63,12 @@ class TerminalUserDisplay implements UserDisplay {
     }
     
     /**
-     * Returns the corrosponding symbol of a cell, which depends on if it's alive
+     * Returns a representation, to be used in the terminal, for a given cell based on its state
      *
      * @param  the cell
-     * @return the symbol
+     * @return the representation
      */
-    private char symbolFromCell(Cell cell) {
+    private char charRepresentationFromCell(Cell cell) {
         if(cell == Cell.ALIVE) {
             return ALIVE_CELL_SYMBOL;
         } else {

@@ -2,7 +2,7 @@
 /**
  * ConwaysGameOfLife here.
  */
-public class ConwaysGameOfLife {
+public class Game {
     private static final int MINIMUM_LIVE_NEIGHBORS_FOR_SURVIVAL = 2;
     private static final int MAXIMUM_LIVE_NEIGHBORS_FOR_SURVIVAL = 3;
     private static final int LIVE_NEIGHBORS_FOR_REPRODUCTION = 3;
@@ -10,18 +10,23 @@ public class ConwaysGameOfLife {
     private final GameUI UI;
     private final GameGrid GRID;
     
-    ConwaysGameOfLife(GameUI ui, GameGrid grid) {
+    Game(GameUI ui, GameGrid grid) {
         this.UI = ui;
         this.GRID = grid;
     }
     
-    void start() {
+    // static Game terminalUIGame() {
+        // return
+    // }
+    
+    void play() {
+        UI.updateDisplay(GRID.cells());
         while(true) {
-            display();
+            step();
         }
     }
     
-    void display() {
+    private void step() {
         foo();
         UI.updateDisplay(GRID.cells());
     }

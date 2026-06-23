@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=GameUserInput
+comment0.text=\r\n\ UserInput\ here.\r\n
+comment1.params=
+comment1.target=GameUserAction\ getUserAction()
+comment1.text=\r\n\ Gets\ the\ users\ most\ recent\ action/input(if\ available)\r\n
+numComments=2
