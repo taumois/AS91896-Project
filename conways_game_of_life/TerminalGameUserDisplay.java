@@ -31,7 +31,8 @@ class TerminalGameUserDisplay implements GameUserDisplay {
      * @param prompt for the user
      */
     public void promptUserForAction(String prompt) {
-        //
+        System.out.println("=========================");
+        System.out.println(prompt);
     }
     
     /**

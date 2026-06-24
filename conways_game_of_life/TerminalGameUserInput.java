@@ -3,19 +3,23 @@
  * TerminalUserInput here.
  */
 class TerminalGameUserInput implements GameUserInput {
+    private GameUserAction mostRecentUserAction;
     
-    /**
-     * Constructor for objects of class TerminalUserInput
-     */
-    TerminalGameUserInput(){
-        //
+    TerminalGameUserInput() {
+        
     }
     
     /**
-     * Gets the users most recent action/input(if available)
+     * Gets(but doesn't return) an action/input from the user
      */
-    public GameUserAction getUserAction() {
-        GameUserAction action = new GameUserAction();
-        return action;
+    public void getUserAction() {
+        mostRecentUserAction = new GameUserAction();
+    }
+    
+    /**
+     * Returns the users most recent action/input(if available)
+     */
+    public GameUserAction userAction() {
+        return mostRecentUserAction;
     }
 }

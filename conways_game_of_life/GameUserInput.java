@@ -3,8 +3,14 @@
  * UserInput here.
  */
 interface GameUserInput {
+    
     /**
-     * Gets the users most recent action/input(if available)
+     * Gets(but doesn't return) an action/input from the user
      */
-    public GameUserAction getUserAction();
+    public void getUserAction();
+    
+    /**
+     * Returns the users most recent action/input(if available)
+     */
+    public GameUserAction userAction();
 }

@@ -15,9 +15,9 @@ public class Game {
         this.GRID = grid;
     }
     
-    // static Game terminalUIGame() {
-        // return
-    // }
+    static Game terminalUIGame() {
+        return new Game(GameUI.terminalGameUI(), new GameGrid(40,80));
+    }
     
     void play() {
         UI.updateDisplay(GRID.cells());
