@@ -16,20 +16,20 @@ public class Game {
     }
     
     static Game terminalUIGame() {
-        return new Game(GameUI.terminalGameUI(), new GameGrid(40,60));
+        return new Game(GameUI.terminalGameUI(), new GameGrid(25,25));
     }
     
     void play() {
         UI.updateDisplay(GRID.cells());
         while(true) {
-            step();
+            for(int i=0;i<333;i++) {
+                foo();
+            }
+            
+            // System.
+            UI.updateDisplay(GRID.cells());
+            UI.askUserForAction("Hello World!");
         }
-    }
-    
-    private void step() {
-        foo();
-        UI.updateDisplay(GRID.cells());
-        UI.askUserForAction("Hello World!");
     }
     
     private void foo() {
